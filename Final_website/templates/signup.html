@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'signup.css' %}">
+  <title>Sign Up Form</title>
+</head>
+<body>
+  
+  <center>
+    <div class="form">
+    <h2 id = "heading">Sign Up</h2>
+    <br><br>
+    {% for message in messages %}
+    <div>
+      <strong id = "tag">{{ message.tags }}</strong> <strong id="message">{{ message }}</strong>
+    </div>
+    <br><br>
+    {% endfor %}
+    
+    <form action="{% url 'signup' %}" method = "POST">
+      {% csrf_token %}
+      <strong class="label" >Email Address :</strong>
+      <input type="email" name = "email" class="inputarea" placeholder="Enter Your Email" required>
+      <br>
+      <br>
+      <strong class="label">Password :</strong>
+      <input type="password" name="password" class = "inputarea" placeholder= "Enter Your Password"required>
+      <br><br>
+      <input type="submit" value = "Sign Up" id = "submit">
+    </form>
+    
+  </div>
+  </center>
+
+  
+</body>
+<footer>
+  <div id="footer">
+    <pre>&copy; copyright @Gaurav Chaudhary                  
+    </pre>
+  </div>
+</footer>
+</html>

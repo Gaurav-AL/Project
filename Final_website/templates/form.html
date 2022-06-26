@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'form.css' %}">
+    <!-- <script defer src = "{% static 'validateform.js' %}"></script> -->
+    <title>Form</title>
+</head>
+<body>
+    <div class="cont">
+        <form id = "form" action = "{% url 'getdata' %}" method = "POST" >
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <td id="register"><strong>Welcome to <span id = "tech" style="background-image:linear-gradient(rgb(232, 27, 27),rgb(200, 146, 146))">TECHie</span> </strong></td>
+                </tr>
+                
+                {% for message in messages %}
+                <br>
+                    <div>
+                        <strong id = "status">{{ message.tags }}</strong> <strong id="display">{{ message }}</strong>
+                    </div>
+                <br>
+                {% endfor %}
+                
+                <tr class="trow">
+                    <td class = "labels"><strong>Username :</strong> </td>
+                    <td><input type= "text" placeholder="Your Full Name" id="username" name="name" required /></td>
+                </tr>
+                <tr class="trow">
+                    <td class = "labels"><strong>Date of Birth :</strong> </td>
+                    <td><input type= "date" id ="dob" name="dob" required/></td>
+                </tr>
+                <tr class="trow">
+                    <td class = "labels"><strong>Email :</strong></td>
+                    <td><input type= "email" placeholder="Your Email" id = "email" name = "email" required/></td>
+                </tr>
+                <tr class="trow">
+                    <td class = "labels"><strong>Password :</strong></td>
+                    <td><input type= "password" placeholder="Your Password" id="Password" name = "pass" required/></td>
+                </tr>
+                <tr class="trow">
+                    <td class = "labels" ><strong>Gender :</strong></td>
+                    <td><input type="radio" name="gender" value="male"><span class = "sex"> Male </span><input type="radio" name="gender" value="female"><span class = "sex"> Female </span><input type="radio" name="gender" id="gender"><span class = "sex">Others</span></td>
+                </tr>
+                <tr class="trow">
+                    <td class = "labels"><strong>Misc Query :</strong></td>
+                    <td><textarea placeholder="optional" rows="4" cols="50" name = "descr"></textarea></td>
+                </tr>
+                <tr>
+                    <p id = "error" style="color:red"></p>
+                </tr>
+                
+                <tr class="trow">
+                    <td ><input type="submit" style="float:right" value="Register"></td>
+                    <td ><a href="/signup"><input type="button" style="float:right" value="Sign Up"></td></a>
+                    <td ><input type="reset" style="float:left"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

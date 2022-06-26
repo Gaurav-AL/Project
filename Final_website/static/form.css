@@ -1,0 +1,57 @@
+.trow{
+    padding: 5px;
+
+}
+.cont{
+    align-items: center;
+    background-image: linear-gradient(rgba(255, 166, 0, 0.892),white,white,green);
+    box-shadow: 20px ;
+    padding: 10px;
+    border-radius: 4px;
+
+}
+body{
+    background-color: rgb(238, 154, 57);
+    align-items: center;
+    display: flex;
+    padding-left: 25%;
+    position: relative;
+    padding-top: 10%;
+}
+input{
+    padding :3px;
+    border-radius:5px;
+    color: black;
+    background-color: inherit;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+}
+#register{
+    font-size: xx-large;
+    font-family: 'Times New Roman', Times, serif;
+    align-items: center;
+    padding-bottom: 20px;
+}
+textarea{
+    border-radius: 5px;
+    color: black;
+    background-color: white;
+}
+.labels{
+    font-size: large;
+}
+.sex{
+    font-size: large;
+}
+#tech{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(72, 139, 214);
+}
+#status{
+    font-family :Verdana, Geneva, Tahoma, sans-serif;
+    color:crimson;
+}
+#display{
+    font-family :Verdana, Geneva, Tahoma, sans-serif;
+    color:crimson;
+}

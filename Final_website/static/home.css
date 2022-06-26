@@ -1,0 +1,16 @@
+.news{
+    background-image: linear-gradient(rgb(21, 1, 1),rgb(206, 110, 110));
+}
+.text{
+    display: inline-block;
+    background-color: rgb(216, 213, 213);
+    border-radius: 10px;
+    width: 400px;
+    margin-top: 2px;
+}
+.link{
+    text-decoration: none;
+}
+strong{
+    font-size: larger;
+}

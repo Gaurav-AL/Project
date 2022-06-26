@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="menu.xsl"?> 
+<menu>
+<food>
+<sno> 1 </sno>
+<foodname> Hamburger </foodname>
+<day> Sunday,Tuesday </day>
+<price> 50 rupees </price>
+</food>
+<food>
+<sno> 2 </sno>
+<foodname> Cheeseburger </foodname>
+<day> Thrusday,Friday </day>
+<price> 40 rupees </price>
+</food>
+<food>
+<sno> 3 </sno>
+<foodname> Chicken Burgger </foodname>
+<day> Saturday </day>
+<price> 80 rupees </price>
+</food>
+<food>
+<sno> 4 </sno>
+<foodname> Paneer Momo </foodname>
+<day> Sunday </day>
+<price> 115 rupees </price>
+</food>
+<food>
+<sno> 5 </sno>
+<foodname> Veg Schezwan Momo </foodname>
+<day> Wednesday </day>
+<price> 99 rupees </price>
+</food>
+<food>
+<sno> 7 </sno>
+<foodname> Chicken Momo </foodname>
+<day> Thrusday,Friday </day>
+<price> 110 rupees </price>
+</food>
+<food>
+<sno> 8 </sno>
+<foodname> Chicken Pahadi Tikka </foodname>
+<day> Friday,Sunday </day>
+<price> 120 rupees </price>
+</food>
+<food>
+<sno> 9 </sno>
+<foodname> CupCakes </foodname>
+<day> Monday </day>
+<price> 150 rupees </price>
+</food>
+<food>
+<sno> 10 </sno>
+<foodname> Chocolate Cake </foodname>
+<day> Monday,Thrusday </day>
+<price> 300 rupees </price>
+</food>
+</menu>
+<!-- </xml-stylesheet> -->

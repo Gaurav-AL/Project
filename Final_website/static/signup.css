@@ -1,0 +1,50 @@
+.form{
+    padding:20px;
+    background-image: linear-gradient(rgb(239, 138, 23),white,rgb(19, 202, 19));
+    display: inline-block;
+    border: 3px solid rgb(239, 216, 216);
+    box-shadow: 5px;
+    border-radius: 5px;
+    margin: 50px;
+    
+
+}
+#footer{
+    padding: 20px;
+   background-color: gainsboro;
+    border-radius: 10px;
+    align-items: center;
+
+}
+.label{
+    font-size: large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.inputarea{
+    color:rgb(34, 4, 4);
+    width:300px;
+    height:30px;
+    background-color: inherit;
+}
+#heading{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: xx-large;
+}
+
+#submit{
+    padding:10px;
+    border-radius: 10px;
+    cursor : pointer;
+    background-color: inherit;
+}
+#id{
+    color:brown;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: larger;
+}
+#message{
+    color:rgb(238, 5, 5);
+    font-family:'Times New Roman', Times, serif;
+    font-size: x-large;
+}
+

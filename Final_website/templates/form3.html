@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Delivery</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'form3.css' %}">
+    <script src="{% static 'form3.js' %}"></script>
+    
+</head>
+<body >
+    <h1 id="lukes">Welcome to <strong style="background-image:linear-gradient(rgb(232, 27, 27),rgb(200, 146, 146))">TECHie</strong></h1>
+      <div >
+        
+    <form action="{% url 'services' %}" method = "POST">
+        {% csrf_token %}
+        {% for message in messages %}
+        <br>
+            <div>
+                <strong id = "status">{{ message.tags }}</strong> <strong id="display">{{ message }}</strong>
+            </div>
+        <br>
+        {% endfor %}
+        <div class="container">
+            {% load static %}
+            <img src="{% static 'images' %}/pizza1.jpg"> <br>
+            <label for="pizza" class="pizza_l">Magharetta Regular - 199 Rs</label>
+            <input type="checkbox" name="Pizza[]" value="199-Magharetta Regular" >
+           </div>      
+        <div class="container">
+            <img src="{% static 'images' %}/pizza2.jfif"> <br>
+            <label for="pizza" class="pizza_l">Non-Veg Medium - 250 Rs</label>
+            <input type="checkbox" name="Pizza[]" value="250-NonVegMedium">
+        </div>
+        <div class="container">
+            <img src="{% static 'images' %}/pizza3.jpg"> <br>
+            <label for="pizza" class="pizza_l">Cheese N Corn- 169 Rs</label>
+            <input type="checkbox" name="Pizza[]" value="169-CheeseNCorn">
+        </div>
+        <div class="container">
+            <img src="{% static 'images' %}/pizza4.jpg"> <br>
+            <label for="pizza" class="pizza_l">Double Cheese Mag - 189 Rs</label>
+            <input type="checkbox" name="Pizza[]" value="189-DoubleCheeseMag">
+        </div>
+        <div class="container">
+            <img src="{% static 'images' %}/pizza5.jpg"> <br>
+            <label for="pizza" class="pizza_l">Indi Tandoori - 249 Rs</label>
+            <input type="checkbox" name="Pizza[]" value="249-IndiTandoori">
+        </div>
+        <div class="container">
+            <img src="{% static 'images' %}/pizza6.jpg"> <br>
+            <label for="pizza" class="pizza_l">Non-Veg Supreme - 319 Rs</label>
+            <input type="checkbox" name="Pizza[]" value = "319-NonVegSupreme">
+        </div>
+        <!-- other than pizza -->
+        <div >
+            <div class="container">
+                <img src="{% static 'images' %}/noddles.jpg"> <br>
+                <label for="pizza" class="pizza_l">Hakka Noodle - 100 Rs</label>
+                <input type="checkbox" name="Pizza[]" value = "100-HakkaNoodle" >
+               </div>      
+            <div class="container">
+                <img src="{% static 'images' %}/coke.jpg"> <br>
+                <label for="pizza" class="pizza_l">Coke - 75 Rs</label>
+                <input type="checkbox" name="Pizza[]" value = "75-Coke">
+            </div>
+            <div class="container">
+                <img src="{% static 'images' %}/momos.jfif"> <br>
+                <label for="pizza" class="pizza_l">Veg Momo - 60 Rs</label>
+                <input type="checkbox" name="Pizza[]" value ="60-VegMomo">
+            </div>
+            <div class="container">
+                <img src="{% static 'images' %}/Friedmomos.jpg"> <br>
+                <label for="pizza" class="pizza_l">Veg Fried Momo - 70 Rs</label>
+                <input type="checkbox" name="Pizza[]" value = "70-VegFriedMomo">
+            </div>
+            <div class="container">
+                <img src="{% static 'images' %}/tandori.jpg"> <br>
+                <label for="pizza" class="pizza_l">tandori Chicken 2 leg piece - 170 Rs</label>
+                <input type="checkbox" name="Pizza[]" value="170-TandoriChicken2LegPiece">
+            </div>
+            <div class="container">
+                <img src="{% static 'images' %}/icecream.jpg"> <br>
+                <label for="pizza" class="pizza_l">Ice cream- 100 Rs</label>
+                <input type="checkbox" name="Pizza[]" value="100-IceCream">
+            </div>
+                <div id="sub">
+                <input type="submit" id="order" value="Order">
+            </div>
+            <br>
+                </div>
+            </form>
+
+            
+
+        <h2 id="total"></h2>
+        <h2 id = "items_ordered"></h2>  
+        <footer>
+        <div class = "about">
+            <h3>About</h3>
+            <p>
+            Services are Closed.
+            </p>
+        </div>
+            <span id="footer">&copy </span>Copyright Gaurav Chaudhary since 7th December 1999.
+        </footer>
+      </div>  
+          
+            
+        
+            
+            
+</body>
+</html>

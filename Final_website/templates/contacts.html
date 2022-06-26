@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'contacts.css' %}">
+  <title>Contact Me</title>
+  
+  
+
+</head>
+<body>
+  
+  <center>
+    <div class="form">
+    <h2 id = "heading">Contact Me</h2>
+    <br><br>
+    {% for message in messages %}
+    <div>
+      </strong> <strong id="message">{{ message }}</strong>
+    </div>
+    <br><br>
+    {% endfor %}
+    <form action="{% url 'contacts' %}" method = "POST">
+      
+      {% csrf_token %}
+      <strong class="label" >Email :</strong>
+      <input type="email" name = "email" class="inputarea" placeholder = "Enter Your Email"required>
+      <br>
+      <br>
+      <strong class="label" >Phone No. :</strong>
+      <input type="number" name = "phno" class="inputarea" placeholder="Enter Your Phone Number" required>
+      <br>
+      <br>
+      <div id ="queries">
+        <strong class="label">Query :</strong>
+      </div>
+      
+      <textarea colspan="100" rowspan="5"  name = "query" class = "quer" placeholder="Your Query, Brief" required ></textarea>
+      <br><br>
+      <input type="submit" value = "Send" id = "submit">
+    </form>
+  </div>
+  </center>
+
+  <footer>
+    <div id="footer">
+      <pre>&copy; copyright @Gaurav Chaudhary                  
+      </pre>
+    </div>
+  </footer>  
+</body>
+
+</html>
