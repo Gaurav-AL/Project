@@ -132,7 +132,74 @@ source = {
         "Country_Code" : "MN",
         "source" : "https://covid19.who.int/region/wpro/country/mn",
         "type" : "HTML"
-        }
+        },
+        # 21:{
+        # "Country" : "Mynamar",
+        # "Country_Code" : "MM",
+        # "source" : "https://covid19.who.int/region/searo/country/mm",
+        # "type" : "HTML"
+        # },
+        # 22 : {
+        # "Country" : "Vietnam",
+        # "Country_Code" : "VN",
+        # "source" : "https://covid19.who.int/region/wpro/country/vn",
+        # "type" : "HTML"
+        # },
+        # 23 : {
+        # "Country" : "Philippines",
+        # "Country_Code" : "PH",
+        # "source" : "https://covid19.who.int/region/wpro/country/ph",
+        # "type" : "HTML"
+        # },
+        # 24 : {
+        # "Country" : "Iran",
+        # "Country_Code" : "IR",
+        # "source" : "https://covid19.who.int/region/emro/country/ir",
+        # "type" : "HTML"
+        # },
+        #  25 : {
+        # "Country" : "Thailand",
+        # "Country_Code" : "TH",
+        # "source" : "https://covid19.who.int/region/searo/country/th",
+        # "type" : "HTML"
+        # },
+        # 26 : {
+        # "Country" : "Cambodia",
+        # "Country_Code" : "KH",
+        # "source" : "https://covid19.who.int/region/wpro/country/kh",
+        # "type" : "HTML"
+        # },
+        # 27 : {
+        # "Country" : "Uzbekistan",
+        # "Country_Code" : "UZ",
+        # "source" : "https://covid19.who.int/region/euro/country/uz",
+        # "type" : "HTML"
+        # },
+        # 28 : {
+        # "Country" : "Kazakhstan",
+        # "Country_Code" : "KZ",
+        # "source" : "https://covid19.who.int/region/euro/country/kz",
+        # "type" : "HTML"
+        # },
+        # 28 : {
+        # "Country" : "Azerbaijan",
+        # "Country_Code" : "AZ",
+        # "source" : "https://covid19.who.int/region/euro/country/az",
+        # "type" : "HTML"
+        # },
+        # 29 : {
+        # "Country" : "Tajikistan",
+        # "Country_Code" : "TJ",
+        # "source" : "https://covid19.who.int/region/euro/country/tj",
+        # "type" : "HTML"
+        # },
+        # 30 : {
+        # "Country" : "United Arab Emirates",
+        # "Country_Code" : "AE",
+        # "source" : "https://covid19.who.int/region/emro/country/ae",
+        # "type" : "HTML"
+        # },    
+        
 }
 
 def getHTMLDoc(url):
@@ -191,6 +258,7 @@ def getIExtractedData(country,url):
     for x in deaths:
         if(re.search("[0-9]",x.text)):
             dt = x.text.split('\xa0')[0]
+    # print(type(cc),type(rc),type(dt))
         
     return {"date":date,"today":today,"Active":cc,"CumulativeDeaths":dt,"RecoveredCases":rc,"cumulative_vaccination":cumulative_vaccination,"today_vaccination":today_vaccination}
     
@@ -205,33 +273,37 @@ def getdata():
     cumulative_cases = []
     cumulative_deaths = []
     cumulative_vaccinations = []
-    
+    notes = {}
     for key,value in source.items():
         if(value['Country'] == "India"):
             countries.append(value["Country"])
             temp = getIExtractedData(value["Country"],value["source"])
             date.append(temp["date"])
-            cumulative_deaths.append(temp["CumulativeDeaths"])
-            cumulative_vaccinations.append(temp["cumulative_vaccination"])
+            cd = temp["CumulativeDeaths"].replace(",","")
+            cumulative_deaths.append(float(cd))
+            cv = temp["cumulative_vaccination"].replace(",","")
+            cumulative_vaccinations.append(float(cv))
             today = temp['today']
             active = temp['Active']
             recovered = temp['RecoveredCases']
-            today_vaccine = temp["today_vaccination"]
+            vaccination_today = temp["today_vaccination"]
             
         else:
             countries.append(value["Country"])
             temp = getWExtractedData(value["Country"],value['source'])
             date.append(temp["date"])
-            cumulative_cases.append(temp["CumulativeCases"])
-            cumulative_deaths.append(temp["cumulative_deaths"])
-            cumulative_vaccinations.append(temp["cumulative_vaccination"])
+            cc = temp["CumulativeCases"].replace(",","")
+            cumulative_cases.append(float(cc))
+            cd = temp["cumulative_deaths"].replace(",","")
+            cumulative_deaths.append(float(cd))
+            cv = temp["cumulative_vaccination"].replace(",","")
+            cumulative_vaccinations.append(float(cv))
             
-            
-    return {"overall":[countries,cumulative_deaths,cumulative_vaccinations,date],"india":[today,active,recovered,today_vaccine],"ExceptIndia" :cumulative_cases}
+    return {"overall":[countries,cumulative_deaths,cumulative_vaccinations,date],"india":[today,active,recovered,vaccination_today],"ExceptIndia" :cumulative_cases}
 # print(getWExtractedData("China",'https://covid19.who.int/region/wpro/country/cn'))
-# print(getIExtractedData("India","https://www.mohfw.gov.in/"))
+# print(getIExtractedData("India","https://www.mohfw.gov.in/")) 
 # print(getHTMLDoc("https://covid19.who.int/region/wpro/country/jp"))
 
-# print(getdata())
+
 
 

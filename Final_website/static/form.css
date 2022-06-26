@@ -4,7 +4,7 @@
 }
 .cont{
     align-items: center;
-    background-image: linear-gradient(rgba(255, 166, 0, 0.892),white,white,green);
+    background-image:  linear-gradient(rgb(16, 110, 115),rgb(123, 225, 228),rgb(5, 107, 130));
     box-shadow: 20px ;
     padding: 10px;
     border-radius: 4px;
@@ -25,6 +25,7 @@ input{
     background-color: inherit;
     font-family: 'Courier New', Courier, monospace;
     font-size: large;
+    border-radius: 5px;
 }
 #register{
     font-size: xx-large;

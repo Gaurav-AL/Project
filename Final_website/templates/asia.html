@@ -13,51 +13,132 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" integrity="sha256-aa0xaJgmK/X74WM224KMQeNQC2xYKwlAt08oZqjeF0E=" crossorigin="anonymous" />
     <!-- jQuery -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
     <script src ="{% static 'asia.js' %}"></script>
     <title>Covid Asis</title>
-    <script>
-        $(document).ready(function()
-        { 
-        const ctx = document.getElementById('myChart1').getContext('2d');
-        const myChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: {{ Countries | safe }},
-                datasets: [{
-                    label: "Countries",
-                    data: {{ Cumumlative_deaths | safe }},
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
+ 
+  </head>
+  <script>
+    $(document).ready(function()
+    { 
+    const ctx = document.getElementById('myChart1').getContext('2d');
+    console.log(ctx);
+    const myChart = new Chart(ctx, {
+        type: "bar",
+        data: {
+            labels: {{ Countries | safe }},
+            datasets: [{
+                label: "Cumulative",
+                data: {{ Cumumlative_deaths | safe }},
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
                 }
             }
-        });
+        }
     });
+});
+$(document).ready(function()
+{ 
+const ctx = document.getElementById('myChart3').getContext('2d');
+console.log(ctx);
+const myChart = new Chart(ctx, {
+    type: "bar",
+    data: {
+        labels: {{ Countries | safe }},
+        datasets: [{
+            label: "Cumulative",
+            data: {{ Except_India | safe }},
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+});
+$(document).ready(function()
+{ 
+const ctx = document.getElementById('myChart2').getContext('2d');
+console.log(ctx);
+const myChart = new Chart(ctx, {
+    type: "bar",
+    data: {
+        labels: {{ Countries | safe }},
+        datasets: [{
+            label: "Cumulative",
+            data: {{ Cumulative_vaccination | safe }},
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+});
 
-    </script>
-  </head>
+</script>
   <body style="background-color:rgb(194, 233, 236)">
    
     
@@ -71,12 +152,34 @@
     </div>
     <br>
     <div class="graphs">
-        <div id="graph1" style="float:left;">
-        <center><span class ="close">Comparison Of Cumulative Deaths</span></center>
+        <div id="graph1" >
+        <center><span class ="close">Comparison of Cumulative Deaths</span></center>
         <br>
-        <canvas id = "myChart1" ></canvas>
+        <canvas id = "myChart1" width = "1500" hight = "200"></canvas>
         </div>
-        
+        <div id="graph2">
+            <center><span class ="close">Comparison of Cumulative Vaccination</span></center>
+            <br>
+            <canvas id = "myChart2" width = "1500" hight = "200"></canvas>
+            </div>
     </div>
+    <div class ="graph">
+        <div id="graph3" >
+            <center><span class ="close">Comparison of Cumulative Deaths</span></center>
+            <br>
+            <canvas id = "myChart3" width = "1500" hight = "200"></canvas>
+            </div>
+    </div>
+    <br>
+    <br>
+    <marquee>
+    <p><span clas="close"> Note :<span> All the Above Data are latest by India : <span style="color : orange "> {{ date | first }} </span> and others <span style =" color : orange "> {{ date.2 }} .</span>
+    </marquee>
+    </p>
   </body>
+<center>
+  <footer>
+        <span id="footer">&copy </span>Copyright Gaurav Chaudhary since 7th December 1999.
+  </footer>
+</center>
   </html>

@@ -1,3 +1,4 @@
+from email.policy import default
 from sqlite3 import IntegrityError
 from django.db import IntegrityError
 from django.contrib.messages.api import success
@@ -27,9 +28,6 @@ def isvalid(request,username,email,dob,password,gender,descr):
     if(len(password) <= 6):
         flag = 1
         messages.add_message(request, messages.ERROR, "Please try Stronger password, length greater than 6 may be, not your name") 
-    if(descr != None and len(descr.split(" ")) <= 2):
-        flag = 1
-        messages.add_message(request, messages.ERROR, "Please Describe More Briefly !")
     
     if(flag != 1):
         messages.add_message(request,messages.SUCCESS,"LogIN SuccessFull")
@@ -103,6 +101,8 @@ def logout(request):
 
 def asia(request):
     data = ut.getdata()
+   
+    
     context = {
         "Countries" : data["overall"][0],
         "Cumumlative_deaths" : data["overall"][1],
@@ -112,10 +112,9 @@ def asia(request):
         "India_active" : data["india"][1],
         "India_recovered" : data["india"][2],
         "India_vaccine":data["india"][3],
-       "Except_India" : data["ExceptIndia"]
-        
+       "Except_India" : data["ExceptIndia"],
     }
-    # print(context["Countries"])
+    
     return render(request,"asia.html",context)
     
     
