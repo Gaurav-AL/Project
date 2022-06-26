@@ -5,6 +5,7 @@ from django.contrib import messages
 from django.http import HttpResponse
 from django.shortcuts import render,redirect
 from .models import userDetail,contactsInfo,billInfo
+from services import utils as ut
 import datetime
 
 
@@ -52,6 +53,7 @@ def getdata(request):
             return redirect('/login')
     return render(request,"form.html")
 def home(request):
+    
     return render(request,"home.html")
 def contacts(request):
     if(request.method == "POST"):
@@ -97,5 +99,24 @@ def signup(request):
     
 def logout(request):
     return render(request,'form.html')
+
+
+def asia(request):
+    data = ut.getdata()
+    context = {
+        "Countries" : data["overall"][0],
+        "Cumumlative_deaths" : data["overall"][1],
+        "Cumulative_vaccination" : data["overall"][2],
+        "date" : data["overall"][3],
+        "India_today" : data["india"][0],
+        "India_active" : data["india"][1],
+        "India_recovered" : data["india"][2],
+        "India_vaccine":data["india"][3],
+       "Except_India" : data["ExceptIndia"]
+        
+    }
+    # print(context["Countries"])
+    return render(request,"asia.html",context)
+    
     
 
