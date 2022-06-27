@@ -3,13 +3,16 @@
 }
 .text{
     display: inline-block;
-    background-color: rgb(216, 213, 213);
+    background-color: inherit;
     border-radius: 10px;
-    width: 400px;
+    width: 500px;
     margin-top: 2px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .link{
     text-decoration: none;
+    display: inline-block;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 strong{
     font-size: larger;

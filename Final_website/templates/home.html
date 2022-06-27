@@ -13,26 +13,26 @@
   <body style="background-color:rgb(194, 233, 236)">
     <nav class="navbar navbar-expand-lg navbar--light bg-light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#" style="color:rgb(0, 153, 255) ; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif"><strong style="background-image:linear-gradient(rgb(232, 27, 27),rgb(200, 146, 146))">TECHie</strong></a>
+        <a class="navbar-brand" href="#" style="color:rgb(0, 153, 255) ; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif"><strong style="background-image:linear-gradient(rgb(232, 27, 27),rgb(200, 146, 146))" class="link">TECHie</strong></a>
        
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/home" style="color:rgb(21, 93, 170)"><strong>Home</strong></a>
+              <a class="nav-link active" aria-current="page" href="/home" style="color:rgb(21, 93, 170)" class="link"><strong>Home</strong></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/contacts" style="color:rgb(55, 24, 128)"><strong>Contact ME</strong></a>
+              <a class="nav-link" href="/contacts" style="color:rgb(55, 24, 128)"><strong class="link">Contact ME</strong></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/services" style="color:rgb(32, 28, 130)"><strong>Diner Services</strong></a>
+              <a class="nav-link" href="/services" style="color:rgb(32, 28, 130)"><strong class="link">Diner Services</strong></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/asia" style="color:rgb(32, 28, 130)"><strong>Covid Data Of Asian Countries</strong></a>
+              <a class="nav-link" href="/asia" style="color:rgb(32, 28, 130)"><strong class="link">Covid Data Of Asian Countries</strong></a>
             </li>
           </ul>
           
           <li class="nav-item">
-            <a class="nav-link" href="/logout" style="color:rgb(24, 44, 112)"><strong style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size:medium;font-size:large">Log out</strong></a>
+            <a class="nav-link" href="/logout" style="color:rgb(24, 44, 112)"><strong style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size:medium;font-size:large" class="link">Log out</strong></a>
           </li>
         </div>
       </div>
@@ -40,13 +40,13 @@
     <div class="container" style="background-color:rgb(195, 176, 154); padding-top:5px ;margin-top:auto">
       <div class="ticker">
           <div class="title">
-              <h5 style="color: rgb(159, 42, 42);text-decoration:underline; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif"><center><strong>Campus New's</strong></center></h5>
+              <h5 style="color: rgb(159, 42, 42);text-decoration:underline; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif"><center><strong class="link">Campus New's</strong></center></h5>
           </div>
           <div class="news">
               <marquee class="news-content">
-                  <a href= "https://nitkkr.ac.in/docs/Date%20sheet%20of%20Offline%20Exams%20for%20the%20session%20of%20May-June%202022%2028042022.pdf"><p style="color:white">Date Sheet for offline Exams for May-June 2022</p></a>
-                  <a href="https://www.iitr.ac.in/175yearscelebration/Academics.html"><p style="color:white">Call for Proposals for IITR@175 Patnerships and  fellowships(IIT Roorkee)</p></a>
-                  <a href="https://drive.google.com/file/d/1NIRKi1HJD33JPA0tVJVVo8jGNYYXO-3E/view"><p style="color:white">Institute Video and Documentry</p></a>
+                  <a href= "https://nitkkr.ac.in/docs/Date%20sheet%20of%20Offline%20Exams%20for%20the%20session%20of%20May-June%202022%2028042022.pdf"><p style="color:white" class="link">Date Sheet for offline Exams for May-June 2022 ,</p></a>
+                  <a href="https://www.iitr.ac.in/175yearscelebration/Academics.html"><p style="color:white" class="link">Call for Proposals for IITR@175 Patnerships and  fellowships(IIT Roorkee) ,</p></a>
+                  <a href="https://drive.google.com/file/d/1NIRKi1HJD33JPA0tVJVVo8jGNYYXO-3E/view"><p style="color:white" class="link">Institute Video and Documentry</p></a>
               </marquee>
           </div>
       </div>
@@ -57,14 +57,20 @@
   <div class="container mt-2">
     <center><strong style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color:rgb(27, 18, 107)"><h2>TechNology News</h2></strong></center>
   </div>
-  
+  <br>
+  <marquee>
+    <p class="text"> <span><strong>Error :</strong></span> Currently server is going through problems, so may be news are jumbled.
+    </p>
+  </marquee>
+  <br>
   <div class="container flex mt-3">
     <div class="row">
       <div class="col">
         <div class="container">
-          <img src="https://www.windowslatest.com/wp-content/uploads/2022/04/Windows-11-KB5012643-1-768x432.jpeg" alt="" class="image" width="400" height="300">
+          {% comment %} <p>  {{ data.0.2 }} </p> {% endcomment %}
+          <img src= {{ data.0.1 }} alt="" class="image" width="500" height="200">
           <div class="text">
-            <a href="https://www.windowslatest.com/2022/04/26/windows-11-kb5012643-released-heres-everything-new-and-improved/amp/" style="color:black"><p style="font-size:medium;"><span class = "link">Windows 11 KB5012643 released – here’s everything new and improved</span></p></a>
+            <a href= {{ data.0.0 }} style="color:black"><p style="font-size:medium;"><span class = "link">{{ data.0.2 }}</span></p></a>
           </div>
           
         </div>
@@ -73,9 +79,9 @@
       </div>
       <div class="col">
         <div class="container">
-          <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202204/RTS73FXO_1200x768.png?eSTTsfV.nbwad9Pyw1Ckz04JLZfswmv.&size=1200:675" alt="" class="image" width="400" height="300" style="border-radius:10px">
+          <img src={{ data.1.1 }} alt="" class="image" width="500" height="200" style="border-radius:10px">
           <div class="text">
-            <a href="https://www.indiatoday.in/amp/technology/news/story/elon-musk-buys-twitter-new-owner-parag-agrawal-1941741-2022-04-26" style="color:black"><p style="font-size:medium"><span class="link">Elon Musk now owns Twitter, all of it sold in a deal worth $44 billion</span></p></a>
+            <a href={{ data.1.0 }} style="color:black"><p style="font-size:medium"><span class="link">{{ data.1.2 }}</span></p></a>
           </div>
          
         </div>
@@ -87,18 +93,18 @@
     <div class="row">
       <div class="col">
         <div class="container">
-          <img src="https://www.xda-developers.com/files/2022/04/FRM6s1jVsAAlK2z-810x298_c.jpg" alt="" class="image" width="400" height="300" style="border-radius:10px">
+          <img src= {{ data.2.1 }} alt="" class="image" width="500" height="200" style="border-radius:10px">
           <div class="text">
-            <a href="https://www.xda-developers.com/pop-os-22-04-release/amp/" style="color:black"><p style="font-size:medium"><span class="link">Pop!_OS 22.04 now available with updated Ubuntu base</span></p></a>
+            <a href= {{ data.2.0 }} style="color:black"><p style="font-size:medium"><span class="link">{{ data.2.2 }}</span></p></a>
           </div>
           
         </div>
       </div>
       <div class="col">
         <div class="container">
-          <img src="https://cdn.mos.cms.futurecdn.net/J5NXfeYJHn8Hm75f6vCWjR-1024-80.jpg.webp" alt="" class="image" width="400" height="300" style="border-radius:10px">
+          <img src={{ data.3.1 }} alt="" class="image" width="500" height="200" style="border-radius:10px">
           <div class="text">
-            <a href="https://www.cnet.com/google-amp/news/starlink-satellite-internet-explained/" style="color:black"><p style="font-size:medium"><span class="link">Starlink Explained: Everything to Know About Elon Musk's Satellite Internet Venture</span></p></a>
+            <a href={{ data.2.0 }} style="color:black"><p style="font-size:medium"><span class="link">{{ data.2.2 }}</span></p></a>
           </div>
           
         </div>
@@ -106,17 +112,14 @@
     </div>
   </div>
 
-  <div class="container mt-3">
-    <center><strong style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color:rgb(27, 18, 107)"><h2>Machine Learning New's</h2></strong></center>
-  </div>
 
   <div class="container flex mt-3">
     <div class="row">
       <div class="col">
         <div class="container">
-          <img src="https://www.marktechpost.com/wp-content/uploads/2022/04/clustering_example.gif" alt="" class="image" width="400" height="300">
+          <img src={{ data.4.1 }} alt="" class="image" width="500" height="200">
           <div class="text">
-            <a href="https://www.marktechpost.com/2022/04/21/researchers-introduce-a-deep-learning-approach-deepdpm-that-supports-deep-clustering-without-knowing-the-number-of-clusters/?amp" style="color:black"><p style="font-size:medium"><span class="link">Researchers Introduce a Deep Learning Approach, ‘DeepDPM’, that Supports Deep Clustering without Knowing the Number of Clusters</span></p></a>
+            <a href={{ data.4.0 }} style="color:black"><p style="font-size:medium"><span class="link">{{ data.4.2 }}</span></p></a>
           </div>
           
         </div>
@@ -125,9 +128,9 @@
       </div>
       <div class="col">
         <div class="container">
-          <img src="https://miro.medium.com/max/1400/0*0KZggH2fQMklDkP4" alt="" class="image" width="400" height="300" style="border-radius:10px">
+          <img src= {{ data.5.1 }} alt="" class="image" width="500" height="200" style="border-radius:10px">
           <div class="text">
-            <a href="https://towardsdatascience.com/optimize-pytorch-performance-for-speed-and-memory-efficiency-2022-84f453916ea6" style="color:black"><p style="font-size:medium"><span class="link">Optimize PyTorch Performance for Speed and Memory Efficiency (2022)</span></p></a>
+            <a href={{ data.5.0 }} style="color:black"><p style="font-size:medium"><span class="link">{{ data.5.2 }}</span></p></a>
           </div>
           
         </div>
@@ -138,9 +141,9 @@
     <div class="row">
       <div class="col">
         <div class="container">
-          <img src="https://149695847.v2.pressablecdn.com/wp-content/uploads/2022/04/deep-1.png" alt="" class="image" width="400" height="300">
+          <img src={{ data.6.1 }} alt="" class="image" width="500" height="200">
           <div class="text">
-            <a href="https://analyticsindiamag.com/top-8-research-papers-by-deepmind-in-2022-till-date/" style="color:black"><p style="font-size:medium"><span class="link">Top 8 research papers by DeepMind in 2022 (till date</span></p></a>
+            <a href={{ data.6.0 }} style="color:black"><p style="font-size:medium"><span class="link">{{ data.6.2 }}</span></p></a>
           </div>
           
         </div>
@@ -149,15 +152,87 @@
       </div>
       <div class="col">
         <div class="container">
-          <img src="https://news.mit.edu/sites/default/files/styles/news_article__image_gallery/public/images/202204/MIT-Driving-Prediction-01-PRESS_0.jpg?itok=rSWWVOAb" alt="" class="image" width="400" height="300" style="border-radius:10px">
+          <img src={{ data.7.1 }} alt="" class="image" width="500" height="200" style="border-radius:10px">
           <div class="text">
-            <a href="https://news.mit.edu/2022/machine-learning-anticipating-behavior-cars-0421" style="color:black"><p style="font-size:medium"><span class="link">Anticipating others’ behavior on the road
-              A new machine-learning system may someday help driverless cars predict the next moves of nearby drivers, cyclists, and pedestrians in real-time</span></p></a>
+            <a href={{ data.7.0 }} style="color:black"><p style="font-size:medium"><span class="link">{{ data.7.2 }}</span></p></a>
           </div>
          
         </div>
       </div>
     </div>
+  </div>
+  <div class="container flex mt-3">
+    <div class="row">
+      <div class="col">
+        <div class="container">
+          <img src={{ data.8.1 }} alt="" class="image" width="500" height="200">
+          <div class="text">
+            <a href={{ data.8.0 }} style="color:black"><p style="font-size:medium"><span class="link">{{ data.8.2 }}</span></p></a>
+          </div>
+          
+        </div>
+        
+        
+      </div>
+      <div class="col">
+        <div class="container">
+          <img src={{ data.9.1 }} alt="" class="image" width="500" height="200" style="border-radius:10px">
+          <div class="text">
+            <a href={{ data.9.0 }} style="color:black"><p style="font-size:medium"><span class="link">{{ data.9.2 }}</span></p></a>
+          </div>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container flex mt-3">
+    <div class="row">
+      <div class="col">
+        <div class="container">
+          <img src={{ data.10.1 }} alt="" class="image" width="500" height="200">
+          <div class="text">
+            <a href={{ data.10.0 }} style="color:black"><p style="font-size:medium"><span class="link">{{ data.10.2 }}</span></p></a>
+          </div>
+          
+        </div>
+        
+        
+      </div>
+      <div class="col">
+        <div class="container">
+          <img src={{ data.11.1 }} alt="" class="image" width="500" height="200" style="border-radius:10px">
+          <div class="text">
+            <a href={{ data.11.0 }} style="color:black"><p style="font-size:medium"><span class="link">{{ data.11.2 }}</span></p></a>
+          </div>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container flex mt-3">
+    <div class="row">
+      <div class="col">
+        <div class="container">
+          <img src={{ data.12.1 }} alt="" class="image" width="500" height="200">
+          <div class="text">
+            <a href={{ data.12.0 }} style="color:black"><p style="font-size:medium"><span class="link">{{ data.12.2 }}</span></p></a>
+          </div>
+          
+        </div>
+        
+        
+      </div>
+      <div class="col">
+        <div class="container">
+          <img src={{ data.13.1 }} alt="" class="image" width="500" height="200" style="border-radius:10px">
+          <div class="text">
+            <a href={{ data.13.0 }} style="color:black"><p style="font-size:medium"><span class="link">{{ data.13.2 }}</span></p></a>
+          </div>
+         
+        </div>
+      </div>
+    </div>
+  </div>
   </div>
     <!-- Optional JavaScript; choose one of the two! -->
 
@@ -173,18 +248,16 @@
   <footer>
     <div class = "container mt-5" style="background-color:rgba(255, 255, 255, 0)">
         <h3>About</h3>
-        <p style="float:left">
+        <p style="float:left" class = "link">
         
 Looking for tech blogs to keep up with the latest technology trends? No worries! Your search ends here! Read on…
 <br>
-<br>
 People from different walks of life are intrigued by the way technology is progressing at a profuse rate, shaping our lives into the digital world!
 <br>
-<br>
-With new tech trends being introduced every quarter and information becoming obsolete as technology evolves, it’s now an obligation to stay relevant and learn about the newest <br><br>technologies, digital industry, social media, and the web in general!
+With new tech trends being introduced every quarter and information becoming obsolete as technology evolves, it’s now an obligation to stay relevant and learn about the newest technologies, digital industry, social media, and the web in general!
 </p>
 <div class="copyright">
-  <center><span id="footer">&copy Copyright Gaurav Chaudhary since 7th December .</center>
+  <center><span id="footer" class="link">&copy Copyright Gaurav Chaudhary since 7th December .</center>
 </div>
 
 </footer>

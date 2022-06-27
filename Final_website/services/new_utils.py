@@ -1,8 +1,10 @@
+from collections import defaultdict
 from bs4 import BeautifulSoup as bs
 import requests
 import re
 
-source = "https://www.technewsworld.com/"
+
+source = "https://www.technewsworld.com/archive"
 
 
 
@@ -12,6 +14,31 @@ def getHTMLDoc(url):
 
 def geturl(url):
     code_html =  bs(getHTMLDoc(url), 'html.parser')
-    print(code_html)
+    
+    news = code_html.find("div",{"class":"more-articles category-article-list"})
+    news = news.find_all("a")
+    
+    links = set()
+    images = []
+    headings = []
+    for i in range(len(news)):
+        links.add(news[i].get("href"))
+        if(news[i].find("img") != None):
+            images.append(news[i].find("img").get("src"))
+        if(news[i].find("h2") != None):
+            headings.append(news[i].find("h2"))
+        
+    links = list(links)
+    tnews = []
+    # print(len(links),len(headings),len(images))
+    for i in range(len(links)):
+        tnews.append([links[i],images[i],headings[i].text])
+    # print(tnews)    
+    return tnews
 
-geturl(source)
+# geturl(source)
+        
+    
+
+     
+        

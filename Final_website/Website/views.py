@@ -7,6 +7,8 @@ from django.http import HttpResponse
 from django.shortcuts import render,redirect
 from .models import userDetail,contactsInfo,billInfo
 from services import utils as ut
+from services import new_utils as nu
+
 import datetime
 
 
@@ -51,8 +53,12 @@ def getdata(request):
             return redirect('/login')
     return render(request,"form.html")
 def home(request):
-    
-    return render(request,"home.html")
+    data = nu.geturl(nu.source)
+    # print(len(data))
+    context = {
+        "data" : data
+    }
+    return render(request,"home.html",context)
 def contacts(request):
     if(request.method == "POST"):
         email = request.POST['email']
