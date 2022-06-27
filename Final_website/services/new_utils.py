@@ -35,7 +35,8 @@ def geturl(url):
     tnews = []
     # print(len(links),len(headings),len(images))
     for i in range(len(links)):
-        tnews.append([links[i],images[i],headings[i].text])
+        if(i < len(links) and i < len(headings) and i < len(images)):
+            tnews.append([links[i],images[i],headings[i].text])
     # print(tnews)    
     return tnews
 

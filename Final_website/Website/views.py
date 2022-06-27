@@ -72,17 +72,22 @@ def contacts(request):
 
 def services(request):
     if(request.method == "POST"):
-        
+        name = request.POST.get("name",False)
         total = 0
         items = ''
         some_var = request.POST.getlist('Pizza[]')
         for values in some_var:
             total += int(values.split("-")[0])
             items += values.split("-")[1] +" "
-        name = userDetail.objects.latest('username')
-        bill = billInfo(name= name,total=total,Items = items)
-        messages.add_message(request,messages.SUCCESS,"Your Order Received !")
-        bill.save()
+        print(name)
+        if(userDetail.objects.filter(username = name).exists()):
+            bill = billInfo(name=name,total=total,Items = items)
+            messages.add_message(request,messages.SUCCESS,"Your Order Received !")
+            bill.save()
+        else:
+            messages.add_message(request,messages.ERROR,"Not a Registered User !")
+            return redirect('/services')
+            
     else:
         return render(request,"form3.html")
     return render(request,"form3.html")
@@ -93,10 +98,10 @@ def signup(request):
         password = request.POST['password']
         check_existing = userDetail.objects.filter(email = email).exists() and userDetail.objects.filter(password = password).exists()
         if(check_existing):
-            messages.add_message(request, messages.SUCCESS, 'Login SuccessFull',fail_silently=True)
+            messages.add_message(request, messages.SUCCESS, 'Order Taken',fail_silently=True)
             return redirect('/home')
         else:
-            messages.add_message(request, messages.ERROR, 'Wrong Email or Password')
+            messages.add_message(request, messages.ERROR, 'Sorry, Not a User')
             return redirect('/signup')
     else:
         return render(request,"signup.html")

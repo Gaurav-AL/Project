@@ -19,7 +19,7 @@
         {% for message in messages %}
         <br>
             <div>
-                <strong id = "status">{{ message.tags }}</strong> <strong id="display">{{ message }}</strong>
+                <center><strong id = "status" >{{ message.tags }}</strong> <strong id="display">{{ message }}</strong><center>
             </div>
         <br>
         {% endfor %}
@@ -86,9 +86,14 @@
                 <label for="pizza" class="pizza_l">Ice cream- 100 Rs</label>
                 <input type="checkbox" name="Pizza[]" value="100-IceCream">
             </div>
+            <center>
                 <div id="sub">
+                <br>
+               <input type = "text" name="name"  placeholder="Enter Your Username (Already Registered)" id="email"  style="width:400px;height:20px;padding:10px;border-radius:5px;background-color:rgb(194, 233, 236)" required>
+                <br><br>
                 <input type="submit" id="order" value="Order">
             </div>
+        </center>
             <br>
                 </div>
             </form>
