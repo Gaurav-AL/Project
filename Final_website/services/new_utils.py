@@ -1,10 +1,13 @@
 from collections import defaultdict
+
 from bs4 import BeautifulSoup as bs
 import requests
-import re
+import random
 
 
-source = "https://www.technewsworld.com/archive"
+page_number = random.randint(1,880)
+print(page_number)
+source = f"https://www.technewsworld.com/archive/page/{page_number}"
 
 
 
