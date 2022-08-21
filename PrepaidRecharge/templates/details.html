@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'index.css' %}">
+    </head>
+    <body>
+        <script>
+            function proceedRecharge(){
+                alert("Processing...")
+                setTimeout('', 50000);
+                alert("Recharge Successful Done");
+            }
+        </script>
+        <center>
+            <h1>Online Payment</h1>
+        <form action="{% url 'process' %}" method = "POST">
+            {% csrf_token %}
+            <label> Card Holder Name: </label>
+            <input type = "text" name = "username" autocomplete="off" placholder = "mobile number" required/>
+
+            <br><br>
+            <label> Card Number : </label>
+            <input type = "text" name = "atm" autocomplete="off" placholder = "Operator" required/>
+            <br><br>
+            <label> CVV : </label>
+            <input type = "password" name = "cvv" autocomplete="off" placholder = "cvv" required/>
+            <br><br>
+            <label> ATM PIN : </label>
+            <input type = "password" name = "pin" autocomplete="off" placholder = "pin" required/>
+            <br><br>
+            <input type = "submit"  value = "Proceed to Payment" onclick="proceedRecharge()"/>
+        </form>
+        <center>
+    </body>
+</html>

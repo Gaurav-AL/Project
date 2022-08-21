@@ -68,6 +68,7 @@ def contacts(request):
         cont = contactsInfo(email=email,phone_no = phone_no,query = query)
         cont.save()
         messages.add_message(request, messages.SUCCESS, 'Query Has Been Sent Successfully, We will contact You Soon.')
+        return redirect('/contacts')
     return render(request,"contacts.html")
 
 def services(request):
@@ -79,7 +80,7 @@ def services(request):
         for values in some_var:
             total += int(values.split("-")[0])
             items += values.split("-")[1] +" "
-        print(name)
+        # print(name)
         if(userDetail.objects.filter(username = name).exists()):
             bill = billInfo(name=name,total=total,Items = items)
             messages.add_message(request,messages.SUCCESS,"Your Order Received !")
@@ -116,6 +117,7 @@ def asia(request):
     
     context = {
         "Countries" : data["overall"][0],
+        "CountriesExceptIndia" :data["ExceptIndia"][1],
         "Cumumlative_deaths" : data["overall"][1],
         "Cumulative_vaccination" : data["overall"][2],
         "date" : data["overall"][3],
@@ -123,7 +125,7 @@ def asia(request):
         "India_active" : data["india"][1],
         "India_recovered" : data["india"][2],
         "India_vaccine":data["india"][3],
-       "Except_India" : data["ExceptIndia"],
+       "Except_India" : data["ExceptIndia"][0],
     }
     
     return render(request,"asia.html",context)

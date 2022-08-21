@@ -17,6 +17,7 @@
 .label{
     font-size: large;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
 }
 .inputarea{
     color:rgb(50, 4, 4);
@@ -45,7 +46,7 @@
     display: inline-flexbox;
 }
 #message{
-    color:rgb(0, 0, 0);
+    color:rgb(191, 24, 24);
     font-family:'Times New Roman', Times, serif;
     font-size: x-large;
 }

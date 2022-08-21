@@ -273,6 +273,7 @@ def getdata():
     cumulative_cases = []
     cumulative_deaths = []
     cumulative_vaccinations = []
+    CountriesExceptIndia = []
     notes = {}
     for key,value in source.items():
         if(value['Country'] == "India"):
@@ -290,6 +291,7 @@ def getdata():
             
         else:
             countries.append(value["Country"])
+            CountriesExceptIndia.append(value["Country"])
             temp = getWExtractedData(value["Country"],value['source'])
             date.append(temp["date"])
             cc = temp["CumulativeCases"].replace(",","")
@@ -299,10 +301,10 @@ def getdata():
             cv = temp["cumulative_vaccination"].replace(",","")
             cumulative_vaccinations.append(float(cv))
             
-    return {"overall":[countries,cumulative_deaths,cumulative_vaccinations,date],"india":[today,active,recovered,vaccination_today],"ExceptIndia" :cumulative_cases}
+    return {"overall":[countries,cumulative_deaths,cumulative_vaccinations,date],"india":[today,active,recovered,vaccination_today],"ExceptIndia" :[cumulative_cases,CountriesExceptIndia]}
 # print(getWExtractedData("China",'https://covid19.who.int/region/wpro/country/cn'))
 # print(getIExtractedData("India","https://www.mohfw.gov.in/")) 
-# print(getHTMLDoc("https://covid19.who.int/region/wpro/country/jp"))
+# print(getHTMLDoc("https://www.mohfw.gov.in/"))
 
 
 

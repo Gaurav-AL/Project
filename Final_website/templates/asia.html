@@ -29,7 +29,7 @@
         data: {
             labels: {{ Countries | safe }},
             datasets: [{
-                label: "Cumulative",
+                label: "Cumulative Deaths",
                 data: {{ Cumumlative_deaths | safe }},
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
@@ -66,9 +66,9 @@ console.log(ctx);
 const myChart = new Chart(ctx, {
     type: "bar",
     data: {
-        labels: {{ Countries | safe }},
+        labels: {{ CountriesExceptIndia | safe }},
         datasets: [{
-            label: "Cumulative",
+            label: "Cumulative Cases Except India",
             data: {{ Except_India | safe }},
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
@@ -107,7 +107,7 @@ const myChart = new Chart(ctx, {
     data: {
         labels: {{ Countries | safe }},
         datasets: [{
-            label: "Cumulative",
+            label: "Cumulative Vaccination",
             data: {{ Cumulative_vaccination | safe }},
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
@@ -165,7 +165,7 @@ const myChart = new Chart(ctx, {
     </div>
     <div class ="graph">
         <div id="graph3" >
-            <center><span class ="close">Comparison of Cumulative Deaths</span></center>
+            <center><span class ="close">Comparison of Cumulative Cases Except India</span></center>
             <br>
             <canvas id = "myChart3" width = "1500" hight = "200"></canvas>
             </div>
@@ -173,7 +173,7 @@ const myChart = new Chart(ctx, {
     <br>
     <br>
     <marquee>
-    <p><span clas="close"> Note :<span> All the Above Data are latest by India : <span style="color : orange "> {{ date | first }} </span> and others <span style =" color : orange "> {{ date.2 }} .</span>
+    <p><span clas="close"> Note :<span> All the Above Data are latest by  , India : <span style="color : orange "> {{ date | first }} </span> and others <span style =" color : orange "> {{ date.2 }} .</span>
     </marquee>
     </p>
   </body>

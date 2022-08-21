@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+    <title>
+        Mobile Recharge
+    </title>
+</head>
+<body style = "padding : 10px;margin:2px">
+    
+
+<center>
+    <div class = "form">
+        <h1>Mobile Prepaid Recharge</h1>
+        <form action="{% url 'Recharge' %}" method = "POST">
+            {% csrf_token %}
+            <label> Mobile Number : </label>
+            <input type = "tel" name = "mobno" autocomplete="off" placholder = "mobile number" pattern="[0-9]{10}" />
+            
+            <br><br>
+            <label> Operator : </label>
+            <select name="operator" id="operator">
+                <option value="Airtel">Airtel</option>
+                <option value="Bsnl">BSNL</option>
+                <option value="Idea">Idea</option>
+                <option value="Vodafone">Vodafone</option>
+                <option value="Aircel">Aircel</option>
+                <option value="Tata+Docomo">Tata Docomo</option>
+                <option value="MTNL">MTNL</option>
+                <option value="Tata+Indicom">Tata Indicom</option>
+              </select>
+              <br><br>
+            <label> Circle : </label>
+            <select name="circle" id="circle">
+                <option value="Delhi+NCR">Delhi NCR</option>
+                <option value="Andhra+Pradesh+Telangana">Andhra Pradesh Telengana</option>
+                <option value="Uttar+pradesh">Uttar Pradesh</option>
+                <option value="Bihar+Jharkand">Jharkand</option>
+                <option value="Assam">Assam</option>
+                <option value="Himachal+Pradesh">Goa</option>
+                <option value="Madhya+Pradesh+Chhattisgarh">Madhya Pradesh Chhattisgarh</option>
+                <option value="North+East">North East</option>
+                <option value="Rajasthan">Rajasthan</option>
+                <option value="Mumbai">Mumbai</option>
+              </select>
+              <br><br>
+            <input type = "submit"  value = "Select Plans" id="sub2"/>
+        </form>
+    </div> 
+    <h1> All Plans </h1>
+    <p style="color:black"> Original Operator : {{ Original_Operator }}</p>
+    {% for plan in all_plans %}
+            <center>
+                <form action="{% url 'payment' %}" method = "POST">
+                    {% csrf_token %}
+                <input type="radio" value = {{ plan.amount }}/> 
+                <div>
+                    <p class = "amount"> {{ plan.amount}} </p>
+                    <p class = "desc">  {{plan.description}} </p>
+                <br>
+                <input type="submit" value = "Recharge Now" /> 
+                </div></form>
+            </center>
+    {% endfor %} 
+    
+             
+        
+</center> 
+</body>
+</html>
