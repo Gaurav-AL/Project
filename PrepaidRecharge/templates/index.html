@@ -51,17 +51,25 @@
     <h1> All Plans </h1>
     <p style="color:black"> Original Operator : {{ Original_Operator }}</p>
     {% for plan in all_plans %}
+        <div class="container">
             <center>
                 <form action="{% url 'payment' %}" method = "POST">
                     {% csrf_token %}
-                <input type="radio" value = {{ plan.amount }}/> 
-                <div>
+            <div id="radio">
+                <input type="radio"  value="selected"/> 
+            </div>
+                <div id = "recharge_plan">
                     <p class = "amount"> {{ plan.amount}} </p>
                     <p class = "desc">  {{plan.description}} </p>
+                </div>
                 <br>
+                <div id="recharge_link">
                 <input type="submit" value = "Recharge Now" /> 
-                </div></form>
+                <div>
+                    <br><br>
+                </form>
             </center>
+        </div>
     {% endfor %} 
     
              

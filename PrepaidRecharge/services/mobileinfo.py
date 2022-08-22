@@ -33,11 +33,14 @@ def getInfo(number,operator , circle):
         phno = phonenumbers.parse(f"+91{number}")
     except:
         raise "Wrong Number"
-    operator = carrier.name_for_number(phno , 'en')
-    country = geocoder.description_for_number(phno , "en")
-    print(operator,country , circle)
-    
-    return [all_plans,operator]
+    oper = carrier.name_for_number(phno , 'en')
+    city = geocoder.description_for_number(phno , "en")
+    if(oper == ''):
+        oper = f"Wrong Number :( Showing Plans For {operator} in circle {circle} in location {city}"
+    elif(not all_plans):
+        oper  = f"No operator Found for this Number in {circle} :("
+    # print(type(all_plans))
+    return [all_plans,oper]
     
 '''
 Web Scraping for getting Plans

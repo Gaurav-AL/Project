@@ -38,3 +38,19 @@ label{
     font-size: medium;
       color: blue;
 }
+.container{
+    float:center;
+}
+#recharge_link{
+    background-color: rgb(175, 175, 211);
+    padding-bottom: 5px;
+}
+#recharge_plan{
+    background-color: rgb(205, 184, 225);
+    border-radius: 10px;
+    padding: 10px;
+}
+#radio{
+    background-color: rgb(26, 176, 12);
+    
+}
