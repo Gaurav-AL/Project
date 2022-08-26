@@ -1,12 +1,13 @@
 .plans{
     float: right;
-    padding-right: 20px;
+    padding: 5px;
+    
 }
 input{
     width:200px;
-    height:20px;
+    height:25px;
     padding:5px;
-    background-color: rgb(216, 212, 245);
+    background-color: #dbe9f4;
     border-radius: 5px;
     border-width: 1px; 
     color:rgb(9, 9, 10);
@@ -29,28 +30,40 @@ label{
     font-weight: bold;
 }
 .amount{
+    display: contents;
     font-weight: bold;
     font-size: large;
       color: red;
+      padding: 3px;
 }
 .desc{
     font-weight: bold;
     font-size: medium;
-      color: blue;
+    display: inline-block;
+      color: rgb(2, 2, 25);
 }
 .container{
-    float:center;
+    display: inline-block;
+    background-color: rgb(173, 190, 228);
+    padding: 10px;
+    border-radius: 10px;
+    margin: 15px;
 }
 #recharge_link{
-    background-color: rgb(175, 175, 211);
-    padding-bottom: 5px;
+    background-color: inherit;
+    display: inline-block;
+    margin: 5px;
+    border-radius: 10px;
 }
 #recharge_plan{
-    background-color: rgb(205, 184, 225);
+    background-color: inherit;
+    display: inline-flex;
     border-radius: 10px;
-    padding: 10px;
+    margin: 5px;
+
 }
 #radio{
-    background-color: rgb(26, 176, 12);
-    
+    background-color: inherit;
+    margin: 5px;
+    border-radius: 10px;
 }

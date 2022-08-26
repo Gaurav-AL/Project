@@ -32,7 +32,7 @@ def getInfo(number,operator , circle):
     try:
         phno = phonenumbers.parse(f"+91{number}")
     except:
-        raise "Wrong Number"
+        return [all_plans,"Wrong Number"]
     oper = carrier.name_for_number(phno , 'en')
     city = geocoder.description_for_number(phno , "en")
     if(oper == ''):
@@ -48,8 +48,8 @@ Web Scraping for getting Plans
 def getPlan(operator , s):
     try:
         getplans = f"https://mplan.in/plans.php?offer=simple&operator={operator}&cricle={s}"
-    except urllib.error.URLError:
-        raise "Failed to Open url"
+    except:
+        return "Unable to Open Url"
     
     string = getHTMLDoc(getplans)
     code = bs(string, 'html.parser')

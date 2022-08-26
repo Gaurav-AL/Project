@@ -49,22 +49,19 @@
         </form>
     </div> 
     <h1> All Plans </h1>
-    <p style="color:black"> Original Operator : {{ Original_Operator }}</p>
+    <p style="color:black;font-weight:bold;font-size:medium;"> Original Operator / Status : <span style="color:red">{{ Original_Operator }} </span></p>
     {% for plan in all_plans %}
         <div class="container">
             <center>
                 <form action="{% url 'payment' %}" method = "POST">
                     {% csrf_token %}
-            <div id="radio">
-                <input type="radio"  value="selected"/> 
-            </div>
-                <div id = "recharge_plan">
+                <div id = "recharge_plan" style="float:left">
                     <p class = "amount"> {{ plan.amount}} </p>
                     <p class = "desc">  {{plan.description}} </p>
-                </div>
-                <br>
-                <div id="recharge_link">
-                <input type="submit" value = "Recharge Now" /> 
+                    <div id="recharge_link" style="float:left">
+                        <input type="submit" value = "Recharge Now" />
+                    </div>
+                </div> 
                 <div>
                     <br><br>
                 </form>

