@@ -50,14 +50,23 @@
     </div> 
     <h1> All Plans </h1>
     <p style="color:black;font-weight:bold;font-size:medium;"> Original Operator / Status : <span style="color:red">{{ Original_Operator }} </span></p>
+    <div class="parent">
     {% for plan in all_plans %}
+    
         <div class="container">
             <center>
                 <form action="{% url 'payment' %}" method = "POST">
                     {% csrf_token %}
                 <div id = "recharge_plan" style="float:left">
-                    <p class = "amount"> {{ plan.amount}} </p>
-                    <p class = "desc">  {{plan.description}} </p>
+                    <div class = "radio" style="float:left">
+                        <input type="radio"  value = "selected"/>
+                    </div>
+                    <div class = "amount" style="float:left">
+                        <p > {{ plan.amount}} </p>
+                    </div>
+                    <div class = "desc" style="float:left">
+                        <p >  {{plan.description}} </p>
+                    </div>
                     <div id="recharge_link" style="float:left">
                         <input type="submit" value = "Recharge Now" />
                     </div>
@@ -67,8 +76,9 @@
                 </form>
             </center>
         </div>
-    {% endfor %} 
     
+    {% endfor %} 
+</div>
              
         
 </center> 
