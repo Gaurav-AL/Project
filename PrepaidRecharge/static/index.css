@@ -7,13 +7,13 @@ input[type="submit"] {
     width:200px;
     height:35px;
     padding:10px;
-    background-color: #dbe9f4;
+    background-color: #3f5c71;
     border-radius: 5px;
     border-width: 1px; 
     color:rgb(9, 9, 10);
     font-weight: bold;
 }
-input[type="tel"] {
+input[type="tel"] , input[type="text"] ,input[type="password"] {
     width:200px;
     height:20px;
     padding:10px;
@@ -60,7 +60,8 @@ label{
     padding: 10px;
     border-radius: 10px;
     margin: 15px;
-    box-shadow: 10px;
+    box-shadow: 10px red;
+    text-align: center;
 }
 .parent{
     background-color: rgb(105, 105, 188);
@@ -86,4 +87,21 @@ label{
     display: contents;
     background-color: inherit;
     border-radius: 10px;
+}
+#body{
+    background-color: #E8DCBB;
+}
+#body_details{
+    background-color: #E8DCBB;
+    padding-top: 100px ;
+    position: relative;
+}
+
+#heading{
+    font-size: 50px;
+    font-weight: bold;
+    font-stretch: extra-expanded;
+    padding-bottom: 20px;
+    margin: 20px;
+    color:blue;
 }
