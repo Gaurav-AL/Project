@@ -50,10 +50,10 @@
     </div> 
     <h1> All Plans </h1>
     <p style="color:black;font-weight:bold;font-size:medium;"> Original Operator / Status : <span style="color:red">{{ Original_Operator }} </span></p>
-    <div class="parent">
+    <div class="parent" style="overflow:scroll">
     {% for plan in all_plans %}
     
-        <div class="container">
+        <div class="container" >
             <center>
                 <form action="{% url 'payment' %}" method = "POST">
                     {% csrf_token %}

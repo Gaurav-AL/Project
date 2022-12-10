@@ -28,6 +28,7 @@ Method to getting plans,operator and country of a phone number.
 def getInfo(number,operator , circle):
     new_circle = circle.split(" ")
     s = "+".join(new_circle)
+    print(number)
     all_plans = getPlan(operator , s)
     try:
         phno = phonenumbers.parse(f"+91{number}")

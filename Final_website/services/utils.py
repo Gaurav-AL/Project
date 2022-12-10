@@ -232,8 +232,7 @@ def getIExtractedData(country,url):
     date = code_html.find("table", {"class": "statetable table table-striped"})
     date = date.find("span")
     date = date.text.split(":")[1].split(",")[0].strip()
-    today = code_html.find("span",{"class":"up"})
-    today = today.text.split("<")[0].split("(")[1].split(")")[0]
+    today =None
     
     confirmed_cases = code_html.find("li", {"class": "bg-blue"})
     recovered_cases = code_html.find("li",{"class":"bg-green"})
@@ -303,7 +302,7 @@ def getdata():
             
     return {"overall":[countries,cumulative_deaths,cumulative_vaccinations,date],"india":[today,active,recovered,vaccination_today],"ExceptIndia" :[cumulative_cases,CountriesExceptIndia]}
 # print(getWExtractedData("China",'https://covid19.who.int/region/wpro/country/cn'))
-# print(getIExtractedData("India","https://www.mohfw.gov.in/")) 
+print(getIExtractedData("India","https://www.mohfw.gov.in/")) 
 # print(getHTMLDoc("https://www.mohfw.gov.in/"))
 
 
